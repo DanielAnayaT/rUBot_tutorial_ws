@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+        <arg name="v" default="0.7"/>
+        <arg name="w" default="0"/>
+        <arg name="x_min" default="-1"/>
+        <arg name="x_max" default="9"/>
+        <arg name="y_min" default="-1"/>
+        <arg name="y_max" default="9"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="turtlesim_tutorial" type="move_inside_room.py" name="move_turtle" output="screen" >
+        <param name="v" value="$(arg v)"/>
+        <param name="w" value="$(arg w)"/>
+        <param name="x_min" value="$(arg x_min)"/>
+        <param name="x_max" value="$(arg x_max)"/>
+        <param name="y_min" value="$(arg y_min)"/>
+        <param name="y_max" value="$(arg y_max)"/>
+    </node>
+</launch>
